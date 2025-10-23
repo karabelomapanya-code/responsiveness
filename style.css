@@ -87,3 +87,59 @@ body {
         flex: 1 1 100%; /* Full width for smaller screens */
       }
     }
+/* Add this to your CSS file */
+.nav-container {
+  position: relative;
+}
+
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+#nav-menu {
+  display: flex; /* Default display for larger screens */
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu on smaller screens */
+  }
+  #nav-menu {
+    display: none; /* Hide navigation menu by default */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  #nav-menu.active {
+    display: block; /* Show navigation menu when hamburger is active */
+  }
+}
+
